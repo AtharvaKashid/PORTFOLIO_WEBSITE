@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/b786b50f24.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="images/atharv_kashid.png" class="logo">
+            <ul id="sidemenu">
+             <li><a href="#header">Home</a></li>
+             <li><a href="#about">About</a></li>
+             <li><a href="#projects">Projects</a></li>
+             <li><a href="#contact">Contact</a></li>
+             <i class="fas fa-times" onclick="closemenu()"></i>
+            </ul>
+            <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+
+       
+        <div class="header-text">
+            <p>Android App Developer</p>
+            <h1>Hi,I'm  Atharv <span> Kashid</span> <br>from Nerul,Navi Mumbai</h1>
+        </div>
+           
+        
+        
+    </div>
+
+</div>
+<!-- about -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/myImage.jpeg" alt="">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>I am student pursuing Bachelor's degree of Computer Engineering in Vidyalankar Institute of Technology
+                </p>
+               <div class="tab-titles">
+                <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                <p class="tab-links" onclick="opentab('education')">Education</p>
+               </div>
+
+               <div class="tab-contents active-tab" id="skills">
+                <ul>
+                    <li><span>UI</span><br>Designing Android/App Interfaces using XML</li>
+                    <li><span>Android Development</span><br>Android App Development</li>
+                    <li><span>Programming</span><br>Java Development</li>
+                    <li><span>Backend Development</span><br>PostgreSQL/MySQL/Firebase</li>
+                </ul>
+               </div>
+               <div class="tab-contents" id="education">
+                <ul>
+                    <li><span>2024-Current</span><br>BTech Student in Vidyalankar Institute of Technology</li>
+                    <li><span>2020-23</span><br>Diploma in Computer Engineering from Government Polytechnic Mumbai,Bandra</li>
+                    <li><span>2020</span><br>SSC Padua High School</li>
+                </ul>
+               </div>
+               <div class="tab-contents" id="experience">
+                <ul>
+                    <li><span>Android Intern</span><br>Redesign Digital <span>(Duration 6 months)</span></li>
+                    
+                </ul>
+               </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- -----Projects-------- -->
+ <div id="projects">
+       <div class="container">
+        <h1 class="sub-title">My Projects</h1>
+         <div class="projects-list">
+           <div>
+            <i class="fa-solid fa-house"></i>
+            <h2>Family Safety Application</h2>
+            <p>Family Safety app created for family use in Daily Life</p>
+           </div>
+           <div>
+            <i class="fa-solid fa-wheat-awn"></i>
+            <h2>Majha Shetkari</h2>
+            <p>Online kissan app created using Java,XML,Firebase,JSON API and Razor Payment gateway</p>
+           </div>
+           <div>
+            <i class="fa-solid fa-book"></i>
+            <h2>AppofQuiz</h2>
+            <p>Quiz app created using Kotlin and Open Trivia API</p>
+           </div> 
+           
+         </div>
+       </div>
+ </div>
+
+ <!-- ----Contact--------- -->
+  <div id="contact">
+     <div class="container">
+          <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i><a href="mailto:atharvakashid1108@gmail.com">atharvakashid1108@gmail.com</a></p>
+                <p><i class="fa-solid fa-square-phone"></i> <a href="tel:8451952564">8451952564</a> </p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/atharv-kashid-3a2946242/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/AtharvaKashid"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://profile.indeed.com/?hl=en_IN&co=IN&from=gnav-homepage"><i class="fa-solid fa-info"></i></a>
+                </div>
+
+                <a href="AtharvKashid_InternshalaResume.pdf" download class="btn">Download CV</a>
+            </div>
+             <div class="contact-right">
+                 <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name">
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn2">Submit</button>
+                    <br>
+                 </form>
+                 <span id="msg"></span>
+               
+             </div>
+          </div>
+     </div>
+     <div class="copyright">
+        <p>Copyright @ Atharv Kashid.</p>
+     </div>
+
+  </div>
+
+<script>
+    var tablinks=document.getElementsByClassName("tab-links");
+    var tabcontents=document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+
+        event.currentTarget.classList.add("active-link")
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+
+    var sidemenu=document.getElementById("sidemenu");
+
+
+    function openmenu(){
+        sidemenu.style.right="0"
+    }
+    function closemenu(){
+        sidemenu.style.right="-200px"
+    }
+
+
+</script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxo7Nb8NwVXcABPtCG-ZYXrq3iN2U9VgSMlsx5_yZmA-zzSJMv53aJeJzR4xFzObvfQ/exec'
+    const form = document.forms['submit-to-google-sheet']
+   const msg =document.getElementById("msg")
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {msg.innerHTML="Message sent successfully"
+         setTimeout(function(){
+                msg.innerHTML=""
+         },5000)
+         form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+         
+</body>
+</html>
